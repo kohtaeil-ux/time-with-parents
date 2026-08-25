@@ -7,14 +7,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 1
+      - name: Clone repository manually (bypass checkout error)
+        run: |
+          git clone https://github.com/kohtaeil-ux/time-with-parents.git .
 
       - name: Set up Java
         uses: actions/setup-java@v5
