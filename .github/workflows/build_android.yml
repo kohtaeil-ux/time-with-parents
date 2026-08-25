@@ -30,10 +30,10 @@ jobs:
         run: flutter pub get
 
       - name: Build Android App Bundle (AAB)
-        run: flutter build appbundle --release
+        run: flutter build apk --release
 
       - name: Upload AAB Artifact
         uses: actions/upload-artifact@v4
         with:
           name: release-appbundle
-          path: build/app/outputs/bundle/release/app-release.aab
+          path: build/app/outputs/flutter-apk/app-release.apk
